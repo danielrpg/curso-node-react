@@ -1,0 +1,16 @@
+{
+  "name": "fibonacci",
+  "version": "0.0.1",
+  "description": "secuencia de fibonnacci",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ctola",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1"
+  }
+}
