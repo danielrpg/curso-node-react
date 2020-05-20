@@ -35,14 +35,29 @@ let getEmployee = (id, callback) => {
     }
 }
 
-getEmployee(1, (err, employee) => {
-    if(err) {
-        return console.log(err);
+let getSalary = (employee, callback) => {
+    let salaryDB = salaries.find(salary => salary.id === employee.id);
+
+    if(!salaryDB) {
+      callback(`No existe un salario para el empleado ${employee.name}`);
     }
-    console.log(employee);
-});
-
-
-let getSalary = () => {
-    
+    else {
+      callback(null, {
+        name: employee.name,
+        salary: salaryDB.salary,
+        id: employee.id
+      });
+    }
 }
+
+getEmployee(2, (err, employee) => {
+  if(err) {
+      return console.log(err);
+  }
+  getSalary(employee, (err, salary) => {
+    if(err) {
+      return console.log(err);
+    }
+    console.log(salary);
+  })
+});

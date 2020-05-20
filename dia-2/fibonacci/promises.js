@@ -37,16 +37,27 @@ let getEmployee = (id) => {
     });
 }
 
+let getSalary = (employee) => {
+  return new Promise((resolve, reject) => {
+    let salaryDB = salaries.find(salary => salary.id === employee.id);
+    if(!salaryDB) {
+      reject(`No existe un salario para el empleado ${employee.name}`);
+    }
+    else {
+      resolve({
+        name: employee.name,
+        salary: salaryDB.salary,
+        id: employee.id
+      });
+    }
+  });
+}
+
+
 getEmployee(1)
     .then((employee) => {
-        // me devuelve el resultado
-        console.log(employee);
+        return getSalary(employee);
     })
-    .catch(function (err) { 
-        // ocurre un error
-        console.log(err);
-    });
+    .then(salary => console.log(salary))
+    .catch((err) => console.log(err));
 
-let getSalary = () => {
-    // 
-}
