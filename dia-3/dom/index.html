@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Titulo</h1>
+    <p class="parrafo"  id="main">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum ullam
+      unde quisquam sed, cupiditate perferendis voluptates. Eligendi id aliquam,
+      impedit, modi, laudantium ab nesciunt ducimus recusandae illum vel quos
+      eos?
+    </p>
+    <p class="parrafo">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam at eum
+      fugiat modi tempore! Vitae temporibus molestiae distinctio in praesentium
+      dolorem autem expedita. At fugiat molestiae laboriosam eius excepturi
+      doloribus.
+    </p>
+    <p class="parrafo">Este es un parrafo</p>
+    <input type="text" id="campoID" name="campo" onkeyup="escucha()">
+
+    <button onclick="alert('Este es una alerta')" >Mostrar Alerta</button>
+    <script>
+        function escucha() {
+            console.log(document.getElementById('campoID').value);
+        }
+    </script>
+  </body>
+</html>
