@@ -1,3 +1,4 @@
+const fs = require('fs');
 const colors = require('colors');
 
 let listTable = (base, limit = 10) => {
@@ -10,6 +11,28 @@ let listTable = (base, limit = 10) => {
     };
 };
 
+const createFile = (base, limit = 10) => {
+    return new Promise((resolve, reject) => {
+        let data = "";
+
+        if(!Number(base)) {
+            reject(`El valor de ${base} no es correcto`);
+            return;
+        }
+
+        for(let i = 1; i <= limit; i++) {
+            data += `${base} * ${i} = ${base * i}\n`;
+        }
+
+        // guardar la informacion
+        fs.writeFile(`tablas/tabla-del-${base}-al-${limit}.txt`, data, err => {
+            if(err) reject(err);
+            resolve(`tabla-del-${base}-al-${limit}.txt`);
+        });
+    });
+}
+
 module.exports = {
-    listTable
+    listTable,
+    createFile
 }

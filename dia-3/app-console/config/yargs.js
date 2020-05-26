@@ -13,6 +13,7 @@ const options = {
 
 const argv = require('yargs')
     .command("list", "Print in cli the table", options)
+    .command("create", "Create a file with the table", options)
     .help().argv;
 
 module.exports = {
