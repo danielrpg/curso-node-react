@@ -1,0 +1,6 @@
+
+GET, POST, PUT, DELETE
+/users
+
+GET, POST, PUT, DELETE
+/posts
